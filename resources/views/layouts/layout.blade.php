@@ -20,18 +20,18 @@
 </head>
 <body>
 
-	<ul class="nav">
+	<ul class="nav bg-secondary">
 		<li class="nav-item">
-			<a class="nav-link active" href="/">Home</a>
+			<a class="nav-link active text-white" href="/">Home</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="about">About Us</a>
+			<a class="nav-link text-white" href="about">About Us</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="contact">Contact Us</a>
+			<a class="nav-link text-white" href="contact">Contact Us</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="/customers">Customer List</a>
+			<a class="nav-link text-white" href="/customers">Customer List</a>
 		</li>
 		<!-- <li class="nav-item float-right">
 			<a class="btn btn btn-outline-danger " href="/adminer">Adminer</a>

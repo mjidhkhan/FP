@@ -2,10 +2,11 @@
 
 
  @section('content')
-   
-    <h1>Contact Us</h1>
+ <div class="container mt-3">
+    <h3 class="title">Contact Us</h3>
+     <hr>
     <div class="section">
         <h3>Inner section</h3>
     </div>
-    
+ </div>
 @endsection
