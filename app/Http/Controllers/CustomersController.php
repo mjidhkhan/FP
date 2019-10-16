@@ -12,14 +12,39 @@ class CustomersController extends Controller
         return view('customers.customers',['customers'=>Customer::all()]);
     }
 
-
     public function store()
     {
         Customer::create($this->validateCustomer());
 
-        return redirect('customers');
+        return redirect('customers')->with('success', 'Customer Data  Created!');
     }
 
+    public function create(Customer $customer , Request $request){
+
+        return view('customers.edit', ['customer'=>$customer]);
+
+    }
+    public function show(Customer $customer , Request $request){
+
+        return view('customers.edit', ['customer'=>$customer]);
+
+    }
+    public function update(Customer $customer , Request $request){
+
+        $customer->update($this->validateCustomer());
+
+        return redirect('customers')->with('success', 'Customer Data  updated!');
+
+
+    }
+    public function destroy(Customer $customer , Request $request){
+
+        $customer->delete();
+
+        return redirect('customers')->with('success', 'Customer Data deleted!');
+
+
+    }
 
     private function validateCustomer()
     {
@@ -28,5 +53,7 @@ class CustomersController extends Controller
             'email'=> 'required|email',
         ]);
     }
+
+
 
 }

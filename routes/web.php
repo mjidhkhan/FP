@@ -29,6 +29,10 @@ Route::get('contact', function () {
 
 Route::get('customers', 'CustomersController@index');
 Route::post('customers', 'CustomersController@store');
+//Route::get('customers', 'CustomersController@create');
+Route::get('customers/edit/{customer}', 'CustomersController@show');
+Route::put('customers/edit/{customer}', 'CustomersController@update');
+Route::delete('customer/delete/{customer}', 'CustomersController@destroy');
 
 
 
