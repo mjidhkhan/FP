@@ -3,11 +3,9 @@
 
  @section('content')
     <div class="container">
-    <h1>Home</h1>
+    <h1>Customers List</h1>
     <div class="section">
         <h3>Inner section</h3>
     </div>
     </div>
 @endsection
-
-
