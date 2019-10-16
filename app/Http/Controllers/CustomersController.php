@@ -21,7 +21,7 @@ class CustomersController extends Controller
 
     public function create(Customer $customer , Request $request){
 
-        return view('customers.edit', ['customer'=>$customer]);
+        //
 
     }
     public function show(Customer $customer , Request $request){
