@@ -7,30 +7,26 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
-    public function index(Customer $customer)
+    public function index()
     {
-        return view('customers.customers',['customers'=>$customer::all()]);
+        return view('customers.customers',['customers'=>Customer::all()]);
     }
 
 
-    public function store(Request $request, Customer $customer)
+    public function store()
     {
+        Customer::create($this->validateCustomer());
 
-        
-        $customer = $request->validate($this->getValidate());
-       // dd($customer);
-        $customer->save();
-
-        //return redirect('customers');
+        return redirect('customers');
     }
 
 
-    private function getValidate()
+    private function validateCustomer()
     {
-        return [
+        return request()->validate([
             'name'=> 'required|min:4',
-            'email'=>'required|email',
-        ];
+            'email'=> 'required|email',
+        ]);
     }
 
 }
