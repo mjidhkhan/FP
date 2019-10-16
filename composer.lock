@@ -4,8 +4,55 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa503b104f700e4337a4bf209a56bc8a",
+    "content-hash": "1dbb126f52639f5670d3bdec2f609064",
     "packages": [
+        {
+            "name": "aranyasen/laravel-adminer",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/senaranya/laravel-adminer.git",
+                "reference": "9ffd8ce5b6356fa1fdfd91988003f2e025dddca0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/senaranya/laravel-adminer/zipball/9ffd8ce5b6356fa1fdfd91988003f2e025dddca0",
+                "reference": "9ffd8ce5b6356fa1fdfd91988003f2e025dddca0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.1",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Aranyasen\\LaravelAdminer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aranya Sen",
+                    "email": "sen.aranya@gmail.com"
+                }
+            ],
+            "description": "Adminer (by Jakub Vrana) wrapper for Laravel 5.5+",
+            "keywords": [
+                "adminer",
+                "database",
+                "explorer",
+                "laravel5",
+                "management"
+            ],
+            "time": "2019-10-13T02:17:31+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",

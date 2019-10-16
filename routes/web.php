@@ -11,8 +11,10 @@
 |
 */
 
+//Route::any('adminer', '\Aranyasen\LaravelAdminer\AdminerAutologinController@index');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.home');
 });
 
 //Route::get('contact', 'ContactFormController@create')->name('contact.create');
@@ -25,6 +27,8 @@ Route::get('contact', function () {
     return view('contact.contact');
 });
 
-Route::get('customers', function () {
-    return view('customers.customers');
-});
+Route::get('customers', 'CustomersController@index');
+Route::post('customers', 'CustomersController@store');
+
+
+
