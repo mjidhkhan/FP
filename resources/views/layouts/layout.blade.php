@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Laravel 6x By MHK</title>
+    <title>@yield('title', 'Laravel')</title>
 	<style>
 	h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: .5rem;
@@ -31,7 +31,7 @@
 			<a class="nav-link text-white" href="contact">Contact Us</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link text-white" href="/customers">Customer List</a>
+			<a class="nav-link text-white" href="/customers">Customer</a>
 		</li>
 		<!-- <li class="nav-item float-right">
 			<a class="btn btn btn-outline-danger " href="/adminer">Adminer</a>
