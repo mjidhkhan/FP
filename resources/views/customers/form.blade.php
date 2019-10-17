@@ -1,13 +1,13 @@
 
 <div class="form-group">
-    <label for="exampleInputEmail1">Customer Name</label>
+    <label for="name">Customer Name</label>
     <input type="text" class="form-control " name="name" placeholder="Enter Customer Name" value="{{ old('name') ?? $customer->name  }}">
     @error('name')
         <p class="text-danger">{{ $errors->first('name') }}</p>
     @enderror
 </div>
 <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
+    <label for="mail">Email address</label>
     <input type="text" class="form-control" name='email' placeholder="Enter email" value="{{ old('email') ?? $customer->email }}">
     @error('email')
         <p class="text-danger">{{ $errors->first('email') }}</p>
