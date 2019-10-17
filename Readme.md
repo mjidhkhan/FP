@@ -224,3 +224,4 @@ So Company ABC created in database.
 
 
 Still lot more left to do in laravel Learning process.
+We work normally dont rush.

@@ -19,18 +19,21 @@ class CustomersController extends Controller
     public function create(Customer $customer , Request $request){
 
         $companies = Company::all();
-        return view('customers.create',compact('companies'));
+
+        //$customer = new Customer();
+
+        return view('customers.create',compact('companies', 'customer'));
 
     }
     public function store(Customer $customer, Request $request)
     {
-        
+
         $customer->create($this->validateCustomer());
-        
+
         return redirect('customers');
     }
 
-    
+
     public function show(Customer $customer , Request $request){
         $companies = Company::all();
         return view('customers.show', compact('customer', 'companies'));

@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     protected $fillable = ['name', 'email', 'active','company_id'];
+    protected $attributes = [
+        'active' => 1
+    ];
 
     public function getActiveAttribute($attribute)
     {
-        return [
-            0=>'Inactive',
-            1=>'Active',
-        ][$attribute];
+        return $this->activeOptions()[$attribute];
     }
 
     public function scopeActive($query)
@@ -28,5 +28,14 @@ class Customer extends Model
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    public function activeOptions()
+    {
+        return [
+            1 => 'Active',
+            0 => 'Inactive',
+            2 => 'In-Progress'
+        ];
     }
 }

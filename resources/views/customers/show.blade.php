@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('title', 'Detaile for'. $customer->name)
+@section('title', 'Detaile for '. $customer->name)
 
 
  @section('content')
@@ -9,9 +9,9 @@
 	 <div class="row">
 		 <div class="col-md-6">
                 <ul class="list-group ">
-                    <li class="list-group-item border  {{ $customer->active === 'Active'? 'border-succes text-success':'text-muted' }}">{{ $customer->name }} <span class="float-right small"> {{ $customer->active }}</span>
+                    <li class="list-group-item border  {{ $customer->active === 'Active'? 'border-success text-success':'text-muted' }}">{{ $customer->name }} <span class="float-right small"> {{ $customer->active }}</span>
                         <p class="small text-muted">{{ $customer->email }}</p>
-                        <p class="small text-muted">{{ $customer->company->name }} 
+                        <p class="small text-muted">{{ $customer->company->name }}
 							 <span class="text-muted ml-4">P: {{ $customer->company->phone }} </span>
 						</p>
                         <div class="">
@@ -21,7 +21,7 @@
                                     @method('DELETE')
                                     <button type='submit' class=" btn btn-link fa fa-trash  text-danger float-right"></button>
                                 </form>
-							
+
                         </div>
                     </li>
                 </ul>
