@@ -6,23 +6,18 @@
     <div class="container mt-3">
         <div class="row col-12  d-flex justify-content-start">
             <h3 class="title float-left">Customers</h3>
-
-
         </div>
         <p class="d-flex justify-content-end">
                 <a   class="btn btn-outline-info" href="/customers/create">Add New Customer</a>
             </p>
          <hr>
-
-
-
             <!-- View Customere Area Starts -->
         <div class="row">
             <div class="col-md-4">
              <h5 class="bg-secondary bg-success text-white pt-3 pb-3 pl-2">Active Customers List</h5>
                 <hr class="mb-5">
-                <ul class="list-group ">
-                     @forelse ($activecustomers as $customer)
+                 @forelse ($activecustomers as $customer)
+                <ul class="list-group mt-1">
                     <li class="list-group-item border border-success text-success">{{ $customer->name }} <span class="float-right small"> {{ $customer->active }}</span>
                         <p class="small text-muted">{{ $customer->email }}</p>
                         <p class="small text-muted">{{ $customer->company->name }} </p>
@@ -35,15 +30,12 @@
                             <a href="customers/{{ $customer->id }}" class="btn btn-link fa fa-eye text-info float-right"></a>
                                  <a href="/customers/{{ $customer->id }}/edit" class="btn btn-link fa fa-edit text-info float-right"></a>
                         </div>
-
-
                     </li>
-
+                    </ul>
                      @empty
                     <h4 class="display-5 text-danger"> No Active Customer Data Found!</h4>
-                     @endforelse
-
                     </ul>
+                     @endforelse
             </div>
             <div class="col-md-4">
              <h5 class="bg-secondary  text-white pt-3 pb-3 pl-2">In-active Customers List</h5>
