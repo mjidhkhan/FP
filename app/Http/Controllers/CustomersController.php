@@ -9,11 +9,14 @@ class CustomersController extends Controller
 {
     public function index()
     {
-        return view('customers.customers',['customers'=>Customer::all()]);
+        $activecustomers = Customer::where('active', 1)->get();
+        $inactivecustomers = Customer::where('active', 0)->get();
+        return view('customers.customers',compact('activecustomers','inactivecustomers'));
     }
 
     public function store()
     {
+        //dd(request());
         Customer::create($this->validateCustomer());
 
         return redirect('customers')->with('success', 'Customer Data  Created!');
@@ -51,6 +54,7 @@ class CustomersController extends Controller
         return request()->validate([
             'name'=> 'required|min:4',
             'email'=> 'required|email',
+            'active'=> 'required',
         ]);
     }
 
