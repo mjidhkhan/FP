@@ -225,3 +225,9 @@ So Company ABC created in database.
 
 Still lot more left to do in laravel Learning process.
 We work normally dont rush.
+
+
+Create mail using php artisan
+```shell
+$ php artisan make:mail ContactFormMail --markdown=emails.contact.contact-form
+```
