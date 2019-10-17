@@ -42,16 +42,16 @@
                             <select class="form-control" name="company_id" id="company_id">
                                 @foreach ($companies as $company)
                                 <option value="{{ $company->id }}">{{ $company->name }}</option>
-                                    
+
                                 @endforeach
-                                
+
                         </select>
                     </div>
                     <button type="submit" class="btn btn-outline-dark btn-sm float-right">Add Customer </button>
                 </form>
             </div>
         </div>
-        
+
             <!-- View Customere Area Starts -->
         <div class="row col-md-8 float-right">
             <div class="col-md-6">
@@ -86,8 +86,8 @@
                      @forelse ($inactivecustomers as $customer)
                     <li class="list-group-item text-muted">{{ $customer->name }}
                         <div class=" nav-link float-right">
-                            <a href="customers/edit/{{ $customer->id }}" class="btn btn-link fa fa-edit text-info"></a>
-                                <form action="customer/delete/{{ $customer->id  }}" method="POST">
+                            <a href="/customers/edit/{{ $customer->id }}" class="btn btn-link fa fa-edit text-info"></a>
+                                <form action="c/ustomer/delete/{{ $customer->id  }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type='submit' class=" btn btn-link fa fa-trash  text-danger"></button>
@@ -113,7 +113,7 @@
                             @forelse ($companies as $company)
                             <h3>{{ $company->name }}</h3>
                             @forelse ($company->customers as $customer)
-                                <li class="list-group-item {{ $customer->active ? 'text-success':'text-muted' }}">{{ $customer->name }} <span class="small text-muted ml-1">({{ $customer->email }})</span> 
+                                <li class="list-group-item {{ $customer->active ? 'text-success':'text-muted' }}">{{ $customer->name }} <span class="small text-muted ml-1">({{ $customer->email }})</span>
                                 </li>
                             @empty
                             <h6 class="display-5 text-danger"> No Customer Data Found!</h6>
