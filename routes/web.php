@@ -27,13 +27,15 @@ Route::get('contact', function () {
     return view('contact.contact');
 });
 
-Route::get('customers', 'CustomersController@index');
-Route::get('customers/create', 'CustomersController@create');
-Route::post('customers', 'CustomersController@store');
-Route::get('customers/{customer}', 'CustomersController@show');
-Route::get('customers/{customer}/edit', 'CustomersController@edit');
-Route::put('customers/{customer}', 'CustomersController@update');
-Route::delete('customers/{customer}', 'CustomersController@destroy');
+//Route::get('customers', 'CustomersController@index');
+//Route::get('customers/create', 'CustomersController@create');
+//Route::post('customers', 'CustomersController@store');
+//Route::get('customers/{customer}', 'CustomersController@show');
+//Route::get('customers/{customer}/edit', 'CustomersController@edit');
+//Route::put('customers/{customer}', 'CustomersController@update');
+//Route::delete('customers/{customer}', 'CustomersController@destroy');
+
+Route::resource('customers', 'CustomersController');
 
 
 
