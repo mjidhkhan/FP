@@ -219,3 +219,6 @@ So Company ABC created in database.
 <img src="public/images/show.png"
      alt="Index Page"
      style="float: left; margin-right: 10px;" />
+
+
+Still lot more left to do in laravel Learning process.
