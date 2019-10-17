@@ -1,6 +1,5 @@
 @extends('layouts.layout')
-
-
+@section('title', 'New Customer')
  @section('content')
 <div class="container mt-5">
         <h3 class="title">New Customer </h3>
