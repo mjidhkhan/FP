@@ -23,9 +23,8 @@ Route::get('/', function () {
 Route::get('about', function () {
     return view('about.about');
 });
-Route::get('contact', function () {
-    return view('contact.contact');
-});
+Route::get('contact', 'ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
 
 //Route::get('customers', 'CustomersController@index');
 //Route::get('customers/create', 'CustomersController@create');
