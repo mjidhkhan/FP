@@ -203,3 +203,19 @@ It will bring in python shell **>>>** like this. To exit tinker type **exit**
  ```
 So Company ABC created in database.
 
+
+### Some images
+
+
+<img src="public/images/index.png"
+     alt="Index Page"
+     style="float: left; margin-right: 10px;" />
+<img src="public/images/create.png"
+     alt="Index Page"
+     style="float: left; margin-right: 10px;" />
+<img src="public/images/edit.png"
+     alt="Index Page"
+     style="float: left; margin-right: 10px;" />
+<img src="public/images/show.png"
+     alt="Index Page"
+     style="float: left; margin-right: 10px;" />
