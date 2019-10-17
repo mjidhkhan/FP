@@ -5,12 +5,12 @@
 
 
     <div class="container mt-5">
-        <h3 class="title">Customers</h3>
+        <h3 class="title">Customer {{ $customer->name }}</h3>
     <hr>
 
         <div class="row">
             <div class="col-md-4 ">
-                <h5 class=" {{ $customer->active === 'Active'? 'bg-success ':'bg-secondary ' }}text-white pt-3 pb-3 pl-2">New Customer</h5>
+                <h5 class=" {{ $customer->active === 'Active'? 'bg-success ':'bg-secondary ' }}text-white pt-3 pb-3 pl-2">Edit Record</h5>
                 <hr class="mb-3">
                 <form action="/customers/{{ $customer->id }}" method="POST">
                     @csrf
