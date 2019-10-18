@@ -15,11 +15,11 @@
 							 <span class="text-muted ml-4">P: {{ $customer->company->phone }} </span>
 						</p>
                         <div class="">
-							<a href="/customers/{{ $customer->id }}/edit" class="btn btn-link fa fa-edit text-info float-right"></a>
+							<a href="/customers/{{ $customer->id }}/edit" class="btn btn-link fa fa-edit text-info float-right">Edit</a>
                                 <form action="/customers/{{ $customer->id  }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type='submit' class=" btn btn-link fa fa-trash  text-danger float-right"></button>
+                                    <button type='submit' class=" btn btn-link fa fa-trash  text-danger float-right">Delete</button>
                                 </form>
 
                         </div>

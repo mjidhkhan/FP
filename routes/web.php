@@ -21,8 +21,8 @@ Route::get('/', 'HomeController@index');
 Route::get('about', function () {
     return view('about.about');
 });
-Route::get('contact', 'ContactFormController@create');
-Route::post('contact', 'ContactFormController@store');
+Route::get('contact', 'ContactFormController@create')->name('contact.create');
+Route::post('contact', 'ContactFormController@store')->name('contact.store');
 
 //Route::get('customers', 'CustomersController@index');
 //Route::get('customers/create', 'CustomersController@create');

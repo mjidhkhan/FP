@@ -25,15 +25,15 @@
                                 <form action="customers/{{ $customer->id  }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type='submit' class=" btn btn-link fa fa-trash  text-danger float-left"></button>
+                                    <button type='submit' class=" btn btn-link fa fa-trash  text-danger float-left">Delete</button>
                                 </form>
-                            <a href="customers/{{ $customer->id }}" class="btn btn-link fa fa-eye text-info float-right"></a>
-                                 <a href="/customers/{{ $customer->id }}/edit" class="btn btn-link fa fa-edit text-info float-right"></a>
+                            <a href="customers/{{ $customer->id }}" class="btn btn-link fa fa-eye text-info float-right">View</a>
+                                 <a href="/customers/{{ $customer->id }}/edit" class="btn btn-link fa fa-edit text-info float-right">Edit</a>
                         </div>
                     </li>
                     </ul>
                      @empty
-                    <h4 class="display-5 text-danger"> No Active Customer Data Found!</h4>
+                    <h6 class="display-5 text-danger"> No Active Customer Data Found!</h6>
                     </ul>
                      @endforelse
             </div>
@@ -49,15 +49,15 @@
                                 <form action="customers/{{ $customer->id  }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type='submit' class=" btn btn-link fa fa-trash  text-danger float-left"></button>
+                                    <button type='submit' class=" btn btn-link fa fa-trash  text-danger float-left">Delete</button>
                                 </form>
-                                 <a href="customers/{{ $customer->id }}" class="btn btn-link fa fa-eye text-info float-right"></a>
-                                 <a href="customers/{{ $customer->id }}/edit" class="btn btn-link fa fa-edit text-info float-right"></a>
+                                 <a href="customers/{{ $customer->id }}" class="btn btn-link fa fa-eye text-info float-right">View</a>
+                                 <a href="customers/{{ $customer->id }}/edit" class="btn btn-link fa fa-edit text-info float-right">Edit</a>
                         </div>
                     </li>
                     </ul>
                      @empty
-                    <h5 class="display-5 text-danger"> No Inactive Customer Data Found!</h5>
+                    <h6 class="display-5 text-danger"> No Inactive Customer Data Found!</h6>
                     </ul>
                      @endforelse
             </div>
@@ -77,7 +77,7 @@
                             @endforelse
 
                             @empty
-                            <h5 class="display-5 text-danger"> No Inactive Customer Data Found!</h5>
+                            <h6 class="display-5 text-danger"> No Inactive Customer Data Found!</h6>
                             @endforelse
                     </ul>
                 </div>

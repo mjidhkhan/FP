@@ -9,7 +9,7 @@
         <h6 class="text-success">Have any query? Send us a message.</h6>
         @include('message')
         <hr>
-        <form action="/contact" method="POST">
+        <form action="{{ route('contact.store') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>

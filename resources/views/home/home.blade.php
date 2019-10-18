@@ -14,6 +14,12 @@
                         </div>
                     @endif
 
+                    <div class="alert alert-info">
+                        <h5>Vue UI/UX</h5>
+                         <my-button type="type"  text="My new botton "></my-button>
+                         <my-message></my-message>
+                    </div>
+                   
                     You are logged in!
                 </div>
             </div>
