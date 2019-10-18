@@ -203,7 +203,24 @@ It will bring in python shell **>>>** like this. To exit tinker type **exit**
    }
 >>> 
  ```
-So Company ABC created in database.
+
+ ### Creating Auth in Laravel 6
+ Laravel 6 has removed make:auth command and authentication scaffolding has been moved as a separate package named laravel/ui
+
+The command to implement Auth is as follows:
+
+```shell
+$ composer require laravel/ui
+$ php artisan ui vue --auth
+```
+### The ui:auth Command
+
+Besides the new ui command, the laravel/ui package comes with another command for generating the auth scaffolding:
+
+```shell
+$ php artisan ui:auth
+```
+If you run the **ui:auth** command, it will generate the auth routes, a **HomeController, auth views**, and a **app.blade.php** layout file.
 
 
 ### Some images
