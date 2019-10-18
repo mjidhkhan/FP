@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Customer;
 use Illuminate\Http\Request;
+use App\Mail\WelcomeNewUserMail;
+use Illuminate\Support\Facades\Mail;
+use App\Events\NewCustomerHasRegisteredEvent;
 
 class CustomersController extends Controller
 {
@@ -31,9 +34,18 @@ class CustomersController extends Controller
     public function store(Customer $customer, Request $request)
     {
 
-        $customer->create($this->validateCustomer());
+        $nc = $customer->create($this->validateCustomer());
 
-        return redirect('customers');
+        event(new NewCustomerHasRegisteredEvent($nc));
+       
+
+        // Rejister to NewsLetter
+       // dump('Register to newsletter');
+
+        //Slack notification to Admin
+       // dump('Slack message here');
+
+        //return redirect('customers');
     }
 
 

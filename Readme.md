@@ -248,3 +248,164 @@ Create mail using php artisan
 ```shell
 $ php artisan make:mail ContactFormMail --markdown=emails.contact.contact-form
 ```
+
+
+### Laravel event Listeners :
+
+Two ways to create events & listeners
+---
+
+#### creating evevnt
+
+**Exapmle: Create New customer creation events**
+
+Suppose we have three events:
+ > 1-   Send email<br>
+ > 2-   Register to news Letter<br>
+ > 3-   Slack notification to Admin
+
+1 - **CustomerController@store();**
+```php
+<?php
+public function store(Customer $customer){
+    // customer data validation 
+
+    // generate event listener
+    event(new NewCustomerHasRegisteredEvent());
+
+    // new customer email
+     Mail::to($event->customer->email)->send(new WelcomeNewUserMail());
+
+    // Register to news Letter
+    dump('Register to news Letter');
+
+    //Slack notification to Admin
+    dump('Slack notification to Admin');
+
+     //return redirect('customers');
+
+}
+```
+
+We have one event and three listeners and we sending email and dumping other events.
+
+
+### Manual Process:
+
+run **php artisan make:event** &  **php artisan make:listener** commands. 
+
+Make the event **NewCustomerHasRegisteredEvent** by running following command
+```shell
+$ php artisan make:event NewCustomerHasRegisteredEvent
+```
+
+Inside **app/Events** looke for file ***NewCustomerHasRegisteredEvent.php***
+
+In construstor function data can be accepted. so pass data from event
+
+
+
+```php
+
+// CustomerControll.php [store()]
+event(new NewCustomerHasRegisteredEvent(£customer));
+
+ //NewCustomerHasRegisteredEvent.php
+public function __construct($customer)
+    {
+        $this->customer = $customer;
+    }
+```
+
+>1- make **customer(variable) ** or ** whatever data variable**   public  
+>2  ***public*** allow to access data in **listener**
+
+Event is ready.
+
+Now ite time to make **listener**
+Run following command and create listener **WelcomeNewCustomerListener**
+
+```shell
+$ php artisan make:listener WelcomeNewCustomerListener
+```
+
+There will be an new directory inside app **app/Listeners**
+
+Remove mail process from store() method of CustomerController and add it into Listener's **handle()** method.
+
+```php
+
+public function handle($event)
+    {
+         Mail::to($event->customer->email)->send(new WelcomeNewUserMail());
+    }
+```
+>1- ***$event->customer*** showing that we accessing customer data from event.  
+>2- **import** required classes.
+
+Now we need to hook this all to perform actions
+
+To **hook** event with listener Laravel provide **EventServiceProvider.php** file inside **providers** directory inside **app** directory.  
+Path to providers is **app/providers**
+
+Add Event **evenServideProvider.php** file
+```php
+protected $listen = [
+        /*
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        */
+        NewCustomerHasRegisteredEvent::class =>[
+            WelcomeNewCustomerListener::class,
+        ],
+    ];
+```
+
+That is it for the manual process.
+
+There is another way to create Listeners
+
+First create event and then use php srtisan to create listeners. 
+Open **EventServiceProviders.php** file and add following events acordint to our example
+
+```php
+protected $listen = [
+        /*
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        */
+        NewCustomerHasRegisteredEvent::class =>[
+            \App\Listeners\WelcomeNewCustomerListener::class,
+            \App\Listeners\RegisterCustomerToNewsletter::class,
+            \App\Listeners\NotifyAdminViaSlack::class,
+        ],
+    ];
+```
+
+Here we asume that we already had event defined.
+After that we add class names related to listeners. 
+>   **WelcomeNewCustomerListener**   
+>   **RegisterCustomerToNewsletter**   
+>   **NotifyAdminViaSlack**
+
+You can see we use absloute path  **/App/Listeners/** 
+as we dont have classes defined and we want listenere to be in **app/listeners** directory.
+
+Now run following **php artisan command.
+
+```shell
+$ php artisan event:generate
+ ```
+
+After running above command you will see listeners are generated for the even.
+
+**That's It.**
+
+So, if you want to change steps or remove listener just remove it from
+**EventServiceProvider.php** and you done. :( 
+
+>**[NOTE]: Events are always running and can cause blocking if you use such as sleep(1000) inside listener, so be carefull.**
+
+---
