@@ -406,6 +406,10 @@ After running above command you will see listeners are generated for the even.
 So, if you want to change steps or remove listener just remove it from
 **EventServiceProvider.php** and you done. :( 
 
->**[NOTE]: Events are always running and can cause blocking if you use such as sleep(1000) inside listener, so be carefull.**
+>**[NOTE]: Events are always running and can cause blocking if you use such as sleep(1000) inside listener, so be carefull.**  
+> ---
+> Check **.env** file you will find **QUEUE_CONNECTION=sync**
+it will run one by one
 
 ---
+### Queues: Database Driver(29)
