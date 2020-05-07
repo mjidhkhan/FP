@@ -64,7 +64,7 @@
             <!-- Companies with customers  Starts -->
             <div class="col-md-4">
                 <h5 class="bg-info text-white pt-3 pb-3 pl-2">Companies</h5>
-                <hr class="mb-1">
+                <hr class="mb-5">
                  <div class="col-md-12">
                      <ul class="list-group">
                             @forelse ($companies as $company)
